@@ -1,0 +1,11 @@
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\bin\Debug\netcoreapp2.1\HammingCodeCSharp.deps.json
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\bin\Debug\netcoreapp2.1\HammingCodeCSharp.runtimeconfig.json
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\bin\Debug\netcoreapp2.1\HammingCodeCSharp.runtimeconfig.dev.json
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\bin\Debug\netcoreapp2.1\HammingCodeCSharp.dll
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\bin\Debug\netcoreapp2.1\HammingCodeCSharp.pdb
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\obj\Debug\netcoreapp2.1\HammingCodeCSharp.csprojAssemblyReference.cache
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\obj\Debug\netcoreapp2.1\HammingCodeCSharp.csproj.CoreCompileInputs.cache
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\obj\Debug\netcoreapp2.1\HammingCodeCSharp.AssemblyInfoInputs.cache
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\obj\Debug\netcoreapp2.1\HammingCodeCSharp.AssemblyInfo.cs
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\obj\Debug\netcoreapp2.1\HammingCodeCSharp.dll
+C:\Projects\CPEG-572\Assignment05\HammingCodeCSharp\obj\Debug\netcoreapp2.1\HammingCodeCSharp.pdb

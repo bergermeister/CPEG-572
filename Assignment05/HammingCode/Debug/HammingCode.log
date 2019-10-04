@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Projects\CPEG-572\Assignment05\HammingCode\main.cpp(13,20): error C2661:  'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::find': no overloaded function takes 0 arguments
+C:\Projects\CPEG-572\Assignment05\HammingCode\main.cpp(14,7): error C2143:  syntax error: missing ';' before 'if'
+C:\Projects\CPEG-572\Assignment05\HammingCode\main.cpp(33,23): error C2001:  newline in constant
+C:\Projects\CPEG-572\Assignment05\HammingCode\main.cpp(34,7): error C2143:  syntax error: missing ';' before '}'
