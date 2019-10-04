@@ -67,18 +67,18 @@
          int[ ] kiBit = new int[ 11 ];
          int    kiCode = 0;
 
-         kiBit[ 2  ] = ( ( acChar & 0x01 ) == 0 ) ? 0 : 1;
-         kiBit[ 4  ] = ( ( acChar & 0x02 ) == 0 ) ? 0 : 1;
-         kiBit[ 5  ] = ( ( acChar & 0x04 ) == 0 ) ? 0 : 1;
-         kiBit[ 6  ] = ( ( acChar & 0x08 ) == 0 ) ? 0 : 1;
-         kiBit[ 8  ] = ( ( acChar & 0x10 ) == 0 ) ? 0 : 1;
-         kiBit[ 9  ] = ( ( acChar & 0x20 ) == 0 ) ? 0 : 1;
-         kiBit[ 10 ] = ( ( acChar & 0x40 ) == 0 ) ? 0 : 1;
-
-         kiBit[ 0 ] = kiBit[ 2 ] ^ kiBit[ 4 ] ^ kiBit[  6 ] ^ kiBit[ 8 ] ^ kiBit[ 10 ];
-         kiBit[ 1 ] = kiBit[ 2 ] ^ kiBit[ 5 ] ^ kiBit[  6 ] ^ kiBit[ 9 ] ^ kiBit[ 10 ];
-         kiBit[ 3 ] = kiBit[ 4 ] ^ kiBit[ 5 ] ^ kiBit[  6 ];
-         kiBit[ 7 ] = kiBit[ 8 ] ^ kiBit[ 9 ] ^ kiBit[ 10 ];
+         kiBit[ 0 ] = ( ( acChar & 0x01 ) == 0 ) ? 0 : 1; // 11
+         kiBit[ 1 ] = ( ( acChar & 0x02 ) == 0 ) ? 0 : 1; // 10
+         kiBit[ 2 ] = ( ( acChar & 0x04 ) == 0 ) ? 0 : 1; // 9
+         kiBit[ 4 ] = ( ( acChar & 0x08 ) == 0 ) ? 0 : 1; // 7
+         kiBit[ 5 ] = ( ( acChar & 0x10 ) == 0 ) ? 0 : 1; // 6
+         kiBit[ 6 ] = ( ( acChar & 0x20 ) == 0 ) ? 0 : 1; // 5
+         kiBit[ 8 ] = ( ( acChar & 0x40 ) == 0 ) ? 0 : 1; // 3
+         
+         kiBit[  3 ] = kiBit[ 0 ] ^ kiBit[ 1 ] ^ kiBit[ 2 ]; // 8
+         kiBit[  7 ] = kiBit[ 4 ] ^ kiBit[ 5 ] ^ kiBit[ 6 ];                           // 4
+         kiBit[  9 ] = kiBit[ 0 ] ^ kiBit[ 1 ] ^ kiBit[ 4 ] ^ kiBit[ 5 ] ^ kiBit[ 8 ]; // 2
+         kiBit[ 10 ] = kiBit[ 0 ] ^ kiBit[ 2 ] ^ kiBit[ 4 ] ^ kiBit[ 6 ] ^ kiBit[ 8 ]; // 1
 
          // 1 2 3 4 5 6 7 8 9 A B
          // 0 1 2 3 4 5 6 7 8 9 A
@@ -102,22 +102,22 @@
             kiBit[ i ] = ( aiCode & ( 0x00000001 << i ) ) >> i;
          }
 
-         if( kiBit[ 0 ] != ( kiBit[ 2 ] ^ kiBit[ 4 ] ^ kiBit[ 6 ] ^ kiBit[ 8 ] ^ kiBit[ 10 ] ) )
+         if( kiBit[ 10 ] != ( kiBit[ 0 ] ^ kiBit[ 2 ] ^ kiBit[ 4 ] ^ kiBit[ 6 ] ^ kiBit[ 8 ] ) )
          {
             kiCount += 1;
          }
 
-         if( kiBit[ 1 ] != ( kiBit[ 2 ] ^ kiBit[ 5 ] ^ kiBit[  6 ] ^ kiBit[ 9 ] ^ kiBit[ 10 ] ) )
+         if( kiBit[ 9 ] != ( kiBit[ 0 ] ^ kiBit[ 1 ] ^ kiBit[ 4 ] ^ kiBit[ 5 ] ^ kiBit[ 8 ] ) )
          {
             kiCount += 2;
          }
 
-         if( kiBit[ 3 ] != ( kiBit[ 4 ] ^ kiBit[ 5 ] ^ kiBit[  6 ] ) )
+         if( kiBit[ 7 ] != ( kiBit[ 4 ] ^ kiBit[ 5 ] ^ kiBit[ 6 ] ) )
          {
             kiCount += 4;
          }
 
-         if( kiBit[ 7 ] != ( kiBit[ 8 ] ^ kiBit[ 9 ] ^ kiBit[ 10 ] ) )
+         if( kiBit[ 3 ] != ( kiBit[ 0 ] ^ kiBit[ 1 ] ^ kiBit[ 2 ] ) )
          {
             kiCount += 8;
          }
@@ -128,8 +128,8 @@
             kiBit[ kiCount ] = ( kiBit[ kiCount ] == 0 ) ? 1 : 0;
          }
 
-         kcChar = ( char )( ( kiBit[ 2 ] << 0 ) | ( kiBit[ 4 ] << 1 ) | ( kiBit[ 5 ] << 2 ) | ( kiBit[ 6 ] << 3 ) |
-                            ( kiBit[ 8 ] << 4 ) | ( kiBit[ 9 ] << 5 ) | ( kiBit[ 10 ] << 6 ) );
+         kcChar = ( char )( ( kiBit[ 0 ] << 0 ) | ( kiBit[ 1 ] << 1 ) | ( kiBit[ 2 ] << 2 ) | ( kiBit[ 4 ] << 3 ) |
+                            ( kiBit[ 5 ] << 4 ) | ( kiBit[ 6 ] << 5 ) | ( kiBit[ 8 ] << 6 ) );
 
          return( kcChar );
       }
